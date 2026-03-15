@@ -1,70 +1,86 @@
-# Getting Started with Create React App
+# Investment Portfolio Dashboard Notes
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## What this project is
+A React project built to displays portfolio assets, allows adding and deleting assets, and calculates total portfolio value.
 
-## Available Scripts
+## React concepts used in this project
 
-In the project directory, you can run:
+### 1. Components
+The project uses:
+- App.js as the parent component
+- Asset.js as the child component
 
-### `npm start`
+A React component is a JavaScript function that returns JSX.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 2. JSX
+JSX is the syntax used to write UI in React.
+It looks like HTML but is written inside JavaScript.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 3. State with useState
+The project uses useState to store the list of assets.
 
-### `npm test`
+Example:
+const [assets, setAssets] = useState([]);
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+State is data that React tracks and updates in the UI when it changes.
 
-### `npm run build`
+### 4. useEffect
+The project uses useEffect to simulate fetching portfolio data.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Example:
+useEffect(() => {
+  const fetchPortfolio = async () => {
+    ...
+    setAssets(portfolioData);
+  };
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  fetchPortfolio();
+}, []);
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+useEffect is used for side effects such as API calls.
 
-### `npm run eject`
+### 5. Props
+The App component passes asset data to the Asset component through props.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Example:
+<Asset name={asset.name} symbol={asset.symbol} price={asset.price} />
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Props are used to pass data from parent to child components.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 6. Rendering lists with map
+The project uses map() to loop through the assets array and display each asset.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Example:
+assets.map((asset) => (...))
 
-## Learn More
+### 7. Event handling
+The Add Asset and Delete buttons use onClick handlers.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Example:
+<button onClick={addAsset}>Add Asset</button>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 8. Updating state
+The project updates the state using setAssets.
 
-### Code Splitting
+Examples:
+setAssets([...assets, newAsset])
+setAssets(assets.filter(asset => asset.id !== id))
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### 9. Derived data with reduce
+The total portfolio value is calculated using reduce().
 
-### Analyzing the Bundle Size
+Example:
+const totalValue = assets.reduce((sum, asset) => sum + asset.price, 0);
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## This project demonstrates technically
+- React components
+- props
+- state management (useState)
+- lifecycle effects (useEffect)
+- async data simulation
+- conditional rendering
+- event handling
+- list rendering with map
+- state updates with filter
+- derived calculations with reduce
+- responsive layout with Bootstrap
