@@ -3,6 +3,9 @@
 ## What this project is
 A React project built to displays portfolio assets, allows adding and deleting assets, and calculates total portfolio value.
 
+## What it looks like
+![Sample image](https://github.com/wemiibidun/memory-match-game/blob/main/memory-match-game.png)
+
 ## React concepts used in this project
 
 ### 1. Components
