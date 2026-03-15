@@ -4,7 +4,7 @@
 A React project built to displays portfolio assets, allows adding and deleting assets, and calculates total portfolio value.
 
 ## What it looks like
-![Sample image](https://github.com/wemiibidun/memory-match-game/blob/main/memory-match-game.png)
+![Sample image](https://github.com/wemiibidun/investment-portfolio-dashboard/blob/main/Portfolio-image.png)
 
 ## React concepts used in this project
 
