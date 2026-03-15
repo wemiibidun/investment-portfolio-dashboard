@@ -1,7 +1,7 @@
 # Investment Portfolio Dashboard Notes
 
 ## What this project is
-A React project built to displays portfolio assets, allows adding and deleting assets, and calculates total portfolio value.
+A React project built to display portfolio assets, allows adding and deleting assets, and calculates total portfolio value.
 
 ## What it looks like
 ![Sample image](https://github.com/wemiibidun/investment-portfolio-dashboard/blob/main/Portfolio-image.png)
