@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/investment-portfolio-dashboard/static/css/main.b1814510.css",
+    "main.js": "/investment-portfolio-dashboard/static/js/main.fd243eac.js",
+    "index.html": "/investment-portfolio-dashboard/index.html",
+    "main.b1814510.css.map": "/investment-portfolio-dashboard/static/css/main.b1814510.css.map",
+    "main.fd243eac.js.map": "/investment-portfolio-dashboard/static/js/main.fd243eac.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b1814510.css",
+    "static/js/main.fd243eac.js"
+  ]
+}
